@@ -1,0 +1,74 @@
+<h2>Users</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="form-group col-4">
+            <label>Name</label>
+            <input ng-model="user.name" class="form-control" type="text"/>
+        </div>
+        <div class="form-group col-3">
+            <label>Age</label>
+            <input ng-model="user.age" class="form-control" type="number"/>
+        </div>
+        <div class="form-group col-4">
+            <label>Location</label>
+            <input ng-model="user.location" class="form-control" type="text"/>
+        </div>
+        <div class="form-group col-1">
+            <label>Admin?</label>
+            <input ng-model="user.isAdmin" type="checkbox" class="form-check-control"/>
+        </div>
+        <button ng-if="mode=='add'" ng-click="create()" class="btn btn-success ml-auto mb-3">Add</button>
+        <button ng-if="mode=='edit'" ng-click="update()" class="btn btn-success ml-auto mb-3">Update</button>
+        <button ng-if="mode=='edit'" ng-click="cancel()" class="btn btn-danger ml-3 mb-3">Cancel</button>
+    </div>
+
+    <!-- Using tables -->
+    <div class="row">
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Location</th>
+                <th>Admin?</th>
+                <th>&nbsp;</th>
+            </tr>
+            <tr ng-repeat="(index, x) in users">
+                <td>{{x.name}}</td>
+                <td>{{x.age}}</td>
+                <td>{{x.location}}</td>
+                <td>{{x.isAdmin}}</td>
+                <td class="text-right">
+                    <button ng-click="view(x)" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-search"></i></button>
+                    <button ng-click="edit(x)" class="btn btn-primary"><i class="fa fa-pencil"></i></button>
+                    <button ng-click="delete(x.$id)" class="btn btn-danger"><i class="fa fa-ban"></i></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Using ui-grid -->
+    <div ui-grid="grid" class="grid"></div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{user.name}} Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div ng-repeat="(key, value) in user">
+            {{key}} = {{value}}
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

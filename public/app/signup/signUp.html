@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 offset-3 text-center">
+      <h1 id="emails">Sign Up</h1>
+      <div class="form-group">
+        <label>What's your name?</label>
+        <input type="text" placeholder="Name"/>
+        <label>What's your email?</label>
+        <input type="email" placeholder="Email"/>
+      </div>
+      <div class="form-group">
+        <label>How old are you?</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell me about yourself and why you want to code:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+      </div>
+      <button class="btn btn-outline-secondary" ui-sref="signUp.thankYou">Submit</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <ui-view></ui-view>
+    </div>
+  </div>
+
+</div>
