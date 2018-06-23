@@ -8,8 +8,8 @@ angular
     templateUrl: 'app/signup/signUp.html'
   })
   .state({
-    name: 'signUp.thankYou',
+    name: 'thankYou',
     url: '/thankYou',
-    template: "<h2>Thank You</h2>"
+    templateUrl: 'app/signup/thankYou.html'
   })
 })
