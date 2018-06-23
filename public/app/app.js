@@ -1,22 +1,16 @@
-angular
-.module('app', ['ui.router', 'app.signup'])
-  .config(function($stateProvider, $urlRouterProvider){
-      $stateProvider
-      .state({
-        name:'home',
-        url: '/home',
-        templateUrl: 'app/home.html'
-      })
-      .state({
-        name: 'tour',
-        url: '/tour',
-        templateUrl: 'app/tour/tour.html'
-      })
-      .state({
-        name: 'tour.info',
-        url: '/info',
-        templateUrl: 'app/tour/info.html'
-      })
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCLP7IuwMYPUVasEFwoc7Gh4WkeYnyTZsk",
+  authDomain: "raven-3727b.firebaseapp.com",
+  databaseURL: "https://raven-3727b.firebaseio.com",
+  projectId: "raven-3727b",
+  storageBucket: "raven-3727b.appspot.com",
+  messagingSenderId: "292676388805"
+};
+firebase.initializeApp(config);
 
-      $urlRouterProvider.otherwise('/home');
-  });
+angular
+.module('app', ['ui.router','firebase','ui-notification','app.home'])
+.config(function($urlRouterProvider) {
+    $urlRouterProvider.otherwise('/home');
+});
