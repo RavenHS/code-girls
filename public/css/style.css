@@ -1,3 +1,11 @@
+#thankYouContainer {
+  margin-top: 50px;
+}
+
+#signUpContainer, #overviewContainer {
+  margin-top: 20px;
+}
+
 .container {
   max-width: 960px;
 }

@@ -5,17 +5,12 @@ angular
   .state({
     name:'home',
     url: '/home',
-    templateUrl: 'app/home.html'
+    templateUrl: 'app/home/home.html'
   })
   .state({
-    name: 'tour',
-    url: '/tour',
-    templateUrl: 'app/home/tour/tour.html'
-  })
-  .state({
-    name: 'tour.info',
-    url: '/info',
-    templateUrl: 'app/home/tour/info.html'
+    name: 'overview',
+    url: '/overview',
+    templateUrl: 'app/home/overview.html'
   })
   .state({
     name: 'signUp',
