@@ -1,6 +1,6 @@
 angular
 .module('app')
-.component('footer', {
+.component('foot', {
   templateUrl: '/app/components/footer/footer.html',
 
 })
